@@ -18,11 +18,6 @@ MOCK_LOGS = [
         "name": "nginx.log",
         "size": 2048,
         "last_modified": "2026-06-24T11:30:00Z"
-    },
-    {
-        "name": "security.log",
-        "size": 4096,
-        "last_modified": "2026-06-24T10:15:00Z"
     }
 ]
 
