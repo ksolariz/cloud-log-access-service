@@ -1,0 +1,19 @@
+#!/bin/bash
+NAME="CloudLogAccess" # Name of the application
+DIR=/home/solariz/development/cloud-log-access-service/backend # FastAPI project directory
+USER=root # the user to run as
+GROUP=root # the group to run as
+NUM_WORKERS=1 # how many worker processes should Gunicorn spawn
+ENV_FILE_PATH=$DIR/.env
+#Settings and Wsgi are present inside the main FastAPI app inside the git repository so add it accordingly
+# which settings file should FastAPI use. In case you have different files for development and production use accordingly.
+
+echo “Starting $NAME as `whoami`”
+# Activate the virtual environment
+cd $DIR
+source venv/bin/activate
+
+# Start your FastAPI Unicorn
+#Programs meant to be run under supervisor should not daemonize themselves (do not use — daemon)
+
+exec venv/bin/uvicorn app.main:app --reload --host 0.0.0.0 --port 8080 --env-file $ENV_FILE_PATH
