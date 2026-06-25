@@ -1,5 +1,7 @@
 # Cloud Log Access Service
 
+![CI](https://github.com/ksolariz/cloud-log-access-service/actions/workflows/ci.yml/badge.svg)
+
 ## Overview
 
 Cloud Log Access Service is a full-stack application designed to provide secure access to log files stored in cloud object storage.
