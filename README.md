@@ -260,17 +260,21 @@ Users can generate a temporary URL that allows downloading a file without authen
 
 ## Screenshots
 
-Login Page
-![alt text](login.png)
+## Login Page
 
-Logs Page
-![alt text](logs.png)
+![Login Page](docs/screenshots/login.png)
 
-Temporary Link Generation
-![alt text](presign_modal.png)
+## Logs Page
 
-Download with presign link
-![alt text](download.png)
+![Logs Page](docs/screenshots/logs.png)
+
+## Temporary Link Generation
+
+![Temporary Link Generation](docs/screenshots/presign_modal.png)
+
+## Download with Presigned Link
+
+![Download with Presigned Link](docs/screenshots/download.png)
 ---
 
 ## Security Decisions
