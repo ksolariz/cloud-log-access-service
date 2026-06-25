@@ -19,29 +19,6 @@ The solution includes:
 
 For local development and demonstration purposes, AWS S3 is simulated using LocalStack.
 
----
-
-# Cloud Log Access Service
-
-## Overview
-
-Cloud Log Access Service is a full-stack application designed to provide secure access to log files stored in cloud object storage.
-
-The solution includes:
-
-- FastAPI Backend (BFF)
-- React Frontend
-- JWT Authentication
-- Redis Session Management
-- Role-Based Authorization (RBAC)
-- S3-compatible Storage Integration
-- Dockerized Local Environment
-- Temporary Pre-Signed Download Links
-
-For local development and demonstration purposes, AWS S3 is simulated using LocalStack.
-
----
-
 # Quick Start
 
 ## Requirements
