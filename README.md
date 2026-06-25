@@ -19,6 +19,88 @@ For local development and demonstration purposes, AWS S3 is simulated using Loca
 
 ---
 
+# Cloud Log Access Service
+
+## Overview
+
+Cloud Log Access Service is a full-stack application designed to provide secure access to log files stored in cloud object storage.
+
+The solution includes:
+
+- FastAPI Backend (BFF)
+- React Frontend
+- JWT Authentication
+- Redis Session Management
+- Role-Based Authorization (RBAC)
+- S3-compatible Storage Integration
+- Dockerized Local Environment
+- Temporary Pre-Signed Download Links
+
+For local development and demonstration purposes, AWS S3 is simulated using LocalStack.
+
+---
+
+# Quick Start
+
+## Requirements
+
+- Docker
+- Docker Compose
+
+## Clone Repository
+
+```bash
+git clone <repository-url>
+cd cloud-log-access-service
+```
+
+## Configure Environment Variables
+
+Create local environment files from the examples:
+
+```bash
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env
+```
+
+## Start Everything
+
+```bash
+docker compose up --build
+```
+
+The following services will be started automatically:
+
+- Frontend
+- Backend
+- Redis
+- LocalStack (S3 simulation)
+
+The bucket and sample log files are automatically created during startup.
+
+## Access
+
+Frontend:
+
+```text
+http://localhost:5173
+```
+
+Swagger Documentation:
+
+```text
+http://localhost:8000/docs
+```
+
+## Demo Credentials
+
+```text
+Username: admin
+Password: admin123
+```
+
+---
+
 ## Architecture
 
 ```text
@@ -100,45 +182,6 @@ Session   (LocalStack)
 
 * Docker
 * Docker Compose
-
-### Start the Environment
-
-```bash
-docker compose up --build
-```
-
-This command starts:
-
-* Frontend
-* Backend
-* Redis
-* LocalStack
-
----
-
-## Accessing the Application
-
-Frontend:
-
-```text
-http://localhost:5173
-```
-
-Backend Swagger:
-
-```text
-http://localhost:8000/docs
-```
-
----
-
-## Demo Credentials
-
-```text
-Username: admin
-Password: admin123
-```
-
 ---
 
 ## API Endpoints
