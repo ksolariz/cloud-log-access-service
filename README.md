@@ -269,12 +269,8 @@ Logs Page
 Temporary Link Generation
 ![alt text](presign_modal.png)
 
-```text
-docs/screenshots/login.png
-docs/screenshots/logs.png
-docs/screenshots/presign_modal.png
-```
-
+Download with presign link
+![alt text](download.png)
 ---
 
 ## Security Decisions
