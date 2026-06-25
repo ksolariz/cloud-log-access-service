@@ -76,7 +76,14 @@ The following services will be started automatically:
 - Redis
 - LocalStack (S3 simulation)
 
-The bucket and sample log files are automatically created during startup.
+## Sample Data
+
+The project includes sample log files used to populate the S3 bucket automatically during startup:
+
+- app.log
+- app1.log
+- app2.log
+- app3.log
 
 ## Access
 

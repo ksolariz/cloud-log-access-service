@@ -1,0 +1,3 @@
+WARN Redis connection slow
+INFO Reconnecting
+INFO Connection restored
