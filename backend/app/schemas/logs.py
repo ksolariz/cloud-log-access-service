@@ -1,7 +1,11 @@
+from datetime import datetime
 from pydantic import BaseModel
 
 
 class LogFile(BaseModel):
-    name: str
+    filename: str
     size: int
-    last_modified: str
+    last_modified: datetime
+
+class PresignRequest(BaseModel):
+    expires_in: int = 300

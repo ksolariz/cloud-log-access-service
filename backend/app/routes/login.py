@@ -6,7 +6,7 @@ from app.schemas import LoginRequest
 import uuid
 from app.dependencys.auth import get_current_user
 
-loginrouter = APIRouter()
+loginrouter = APIRouter(prefix="/api/auth")
 
 SECRET_KEY = env_vars.get('auth_key')
 ALGORITHM = env_vars.get('algorithm')

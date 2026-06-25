@@ -1,6 +1,6 @@
 import boto3
-
 from app.dependencys import env_vars
+from botocore.exceptions import ClientError
 
 
 class S3Service:
@@ -28,18 +28,49 @@ class S3Service:
         for item in response.get("Contents", []):
 
             files.append({
-                "name": item["Key"],
+                "filename": item["Key"],
                 "size": item["Size"],
                 "last_modified": item["LastModified"]
             })
 
         return files
-    
+
     def download_log(self, filename: str):
 
-        response = self.client.get_object(
-            Bucket=self.bucket,
-            Key=filename
+        try:
+            response = self.client.get_object(
+                Bucket=self.bucket,
+                Key=filename
+            )
+
+            return response["Body"].read()
+
+        except ClientError as e:
+
+            error_code = e.response["Error"]["Code"]
+
+            if error_code == "NoSuchKey":
+                return None
+
+            raise
+
+    def generate_presigned_url( self, filename: str,expires_in: int = 300 ):
+
+        s3_endpoint_url = env_vars.get("S3_ENDPOINT_URL")
+        public_endpoint = env_vars.get("PRESIGNED_PUBLIC_ENDPOINT", "http://localhost:4566")
+    
+        url = self.client.generate_presigned_url(
+            ClientMethod="get_object",
+            Params={
+                "Bucket": self.bucket,
+                "Key": filename
+            },
+            ExpiresIn=expires_in
         )
 
-        return response["Body"].read()
+        url = url.replace(
+            s3_endpoint_url,
+            public_endpoint
+        )
+
+        return url
