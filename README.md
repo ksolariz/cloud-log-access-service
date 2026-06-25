@@ -183,14 +183,6 @@ Session   (LocalStack)
 
 ---
 
-## Running the Project
-
-### Requirements
-
-* Docker
-* Docker Compose
----
-
 ## API Endpoints
 
 ### Authentication
